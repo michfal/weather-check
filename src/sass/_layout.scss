@@ -1,0 +1,68 @@
+//layout of page
+
+
+html, body {
+    font-family: 'Calibri', 'Lato', sans-serif;
+    color: #D2D2D2
+}
+
+.logo {
+    font-size: $info-text-size;
+    font-weight: 700;
+}
+
+
+.info_text {
+    font-size: $info-text-size;
+    font-weight: 400;
+    text-align: center;
+    &--large_scrn {
+        display: none;
+    }
+    &--temperature_main {
+        font-size: 2rem;
+        color: #FFFFFF;
+        margin-right: 10%;
+    }
+}
+
+
+
+.main_display {
+    background-image: linear-gradient(to bottom right, #403D3F, #131313);
+    height: 50vh;
+    border-bottom: 1px solid #363636;
+    &__header {
+        height: 2rem;
+        border-bottom: 2px solid #4A4A4A;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &__place {
+        display: flex;
+        justify-content: space-between;
+        &_time {
+            font-size: $info-text-size
+        }
+    }
+    &__weather {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+.weather_basic_info {
+    // border: 1px solid red;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.seven_days_display {
+    background-color: #1C1C1C;
+    height: 50vh;
+}
