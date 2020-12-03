@@ -15,24 +15,39 @@
             <header class="main_display__header">
                 <h1 class="logo">Weather-Check</h1>    
             </header>
-            <section class="main_display__place">
-                <form action="" class="main_display__place_search" id="search_form">
-                    <button id="search_button">Search</button>
-                    <input type="text" name="city" value="warsaw">
+            <div class="main_display__place">
+                <form class="main_display__place_form" action="" class="main_display__place_search" id="search_form">
+                    <button class="main_display__place_form_button" id="search_button">Search</button>
+                    <input class="main_display__place_form_input" type="text" name="city" value="warsaw">
                     
                 </form>
-                <h2 class="main_display__place_time">time</h2>
-            </section>
+                <p class="main_display__place_time">time</p>
+            </div>
             
-            <section class="main_display__weather">
+            <div class="main_display__weather">
                 <!-- <h2>${date}</h2>
                 <h2>Temperature: ${temperature}</h2>
                 <h2>broken clouds</h2>
                 <img src="http://openweathermap.org/img/wn/04n@2x.png" alt="">` -->
-            </section>
+
+            </div>
+            <div class="weather_add_info">
+                <div class="weather_add_info__block">
+                    <img class="weather_add_info__block_img" src="../images/humidity_icon.svg" alt="">
+                    <h2 class="weather_add_info__block_display">45%</h2>
+                </div>
+                <div class="weather_add_info__block">
+                    <img class="weather_add_info__block_img" src="../images/wind_icon.svg" alt="">
+                    <h2 class="weather_add_info__block_display">9 km/h</h2>
+                </div>
+                <div class="weather_add_info__block">
+                    <img class="weather_add_info__block_img" src="../images/pressure_icon.svg" alt="">
+                    <h2 class="weather_add_info__block_display">1.013 hPa</h2>
+                </div>
+            </div>
         </section>
         <section class="seven_days_display">
-
+            <!-- <img src="../images/broken_cluds_icon.svg" alt="">   -->
         </section>
     </body>
 </html>
