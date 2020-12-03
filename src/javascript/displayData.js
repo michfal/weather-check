@@ -1,4 +1,4 @@
-export  async function displayCurrentWeather(weatherData) {
+export  async function displayCurrentWeather(weatherData, weatherIcons) {
     const currentWeather = weatherData.current;     //get data for current date
     console.log(currentWeather);
 
@@ -20,9 +20,10 @@ export  async function displayCurrentWeather(weatherData) {
     const description = weather.description;                //get description
     
     const icon = weather.icon;                              //get icon
+    console.log(icon)
     // const display = document.querySelector('.main_display__weather')
     // display.innerHTML = ''
-    buildDisplayDom(date, sunrise, sunset, feelsLike, temperature, description, icon)
+    buildDisplayDom(date, sunrise, sunset, feelsLike, temperature, description, weatherIcons[icon])
    
 }
 
@@ -50,11 +51,12 @@ function dateConvert(UNIX_timestamp){
   }
 
   function buildDisplayDom(date, sunrise, sunset, feelsLike, temperature, description, icon) {
+    console.log(icon)
     const content = `
     <h2 class="info_text info_text--large_scrn">${date}</h2>
     
     <div class="weather_basic_info">
-      <img src="http://openweathermap.org/img/wn/${icon}@2x.png" alt="">
+      ${icon}
       <h2 class="info_text info_text--temperature_main">${temperature} C</h2>
     </div>
     <h2 class="info_text">${description}</h2>
@@ -67,7 +69,13 @@ function dateConvert(UNIX_timestamp){
     const currentWeatherDiv = document.createElement('DIV');
     currentWeatherDiv.classList.add('current_weather')
     currentWeatherDiv.innerHTML = content;
-    display.appendChild(currentWeatherDiv)
+    
+    display.appendChild(currentWeatherDiv);
+
+    // const weatherIcon = document.createElement('DIV');
+    // weatherIcon.classList.add('current_weather_icon')
+    // weatherIcon.innerHTML = icon;
+    // display.appendChild(weatherIcon);
   }
 
 

@@ -8,9 +8,12 @@ import {displayCurrentWeather} from './displayData';
 import {displayDailyWeather} from './displayData';
 import {currentTime} from './displayData'
 import {getSearchFormData} from './searchForm';
+import {weatherIcons} from './weatherIcons'
 
 
-console.log(process.env.API_KEY);
+
+
+// console.log(weatherIcons["01d"]);
 
 const searchButton = document.querySelector('#search_button');
 
@@ -24,7 +27,7 @@ window.addEventListener('load', async (event) => {
     
     const weatherData = await getWeather(city, process.env.API_KEY);
     console.log(weatherData)
-    await displayCurrentWeather(weatherData)
+    await displayCurrentWeather(weatherData, weatherIcons)
     await displayDailyWeather(weatherData)
 })
 
