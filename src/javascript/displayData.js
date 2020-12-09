@@ -1,31 +1,48 @@
-export  async function displayCurrentWeather(weatherData, weatherIcons) {
-    const currentWeather = weatherData.current;     //get data for current date
-    console.log(currentWeather);
 
-    const date = dateConvert(currentWeather.dt)     //get date
-    // const time = timeConvert(currentWeather.dt)
-                                                           //get feels like temperature
-    const sunset = timeConvert(currentWeather.sunset)      //get sunset 
-    // console.log(sunset)                             
-    const sunrise = timeConvert(currentWeather.sunrise)           //get sunrise
-    // console.log(sunrise)
-    const humidity = currentWeather.humidity                //get humidity
-    // console.log(humidity)
-    const pressure = currentWeather.pressure                //get pressure
-    // console.log(pressure)
-    const temperature = currentWeather.temp;                //get temperature
-    const feelsLike = currentWeather.feels_like             //get feels like temperature
-    // console.log(feelsLike)
-    const weather = currentWeather.weather[0];              //get embedded weather info
-    const description = weather.description;                //get description
+export  async function displayCurrentWeather(weatherData, weatherIcons) {
+    const currentWeather = weatherData.current;
+
+    const data = new filterData(currentWeather, weatherIcons)
+
+      const content = `
+    <h2 class="info_text info_text--large_scrn">${data.date}</h2>
     
-    const icon = weather.icon;                              //get icon
-    console.log(icon)
-    // const display = document.querySelector('.main_display__weather')
-    // display.innerHTML = ''
-    buildDisplayDom(date, sunrise, sunset, feelsLike, temperature, description, weatherIcons[icon])
+    <div class="weather_basic_info">
+      ${weatherIcons[data.icon]}
+      <h2 class="info_text info_text--temperature_main">${Math.round(data.temperature)} C</h2>
+    </div>
+    <h2 class="info_text">${data.description}</h2>
+    <h2 class="info_text">Feels like ${Math.round(data.feelsLike)}</h2>
+    `
+    
+    const display = document.querySelector('.main_display__weather')
+    display.innerHTML = ''
+    
+    const currentWeatherDiv = document.createElement('DIV');
+    currentWeatherDiv.classList.add('current_weather')
+    currentWeatherDiv.innerHTML = content;
+    
+    display.appendChild(currentWeatherDiv);
    
 }
+
+function filterData(currentWeather, weatherIcons) {
+  // const currentWeather = weatherData.current; 
+    // console.log(currentWeather.weather)
+    const data = {
+            date: dateConvert(currentWeather.dt),
+            sunset: timeConvert(currentWeather.sunset),                        
+            sunrise: timeConvert(currentWeather.sunrise),
+            humidity: currentWeather.humidity,
+            pressure: currentWeather.pressure,
+            temperature: currentWeather.temp,
+            feelsLike: currentWeather.feels_like,
+            weather: currentWeather.weather[0],
+            description: currentWeather.weather[0].description,
+            icon: currentWeather.weather[0].icon,
+          }
+      return data
+    }
 
 export  async function displayDailyWeather(weatherData) {
     const dailyWeather = weatherData.daily;
@@ -49,35 +66,6 @@ function dateConvert(UNIX_timestamp){
     const time = hour + ':' + min;   
     return time;
   }
-
-  function buildDisplayDom(date, sunrise, sunset, feelsLike, temperature, description, icon) {
-    console.log(icon)
-    const content = `
-    <h2 class="info_text info_text--large_scrn">${date}</h2>
-    
-    <div class="weather_basic_info">
-      ${icon}
-      <h2 class="info_text info_text--temperature_main">${temperature} C</h2>
-    </div>
-    <h2 class="info_text">${description}</h2>
-    <h2 class="info_text">Feels like ${feelsLike}</h2>
-    `
-    
-    const display = document.querySelector('.main_display__weather')
-    display.innerHTML = ''
-    
-    const currentWeatherDiv = document.createElement('DIV');
-    currentWeatherDiv.classList.add('current_weather')
-    currentWeatherDiv.innerHTML = content;
-    
-    display.appendChild(currentWeatherDiv);
-
-    // const weatherIcon = document.createElement('DIV');
-    // weatherIcon.classList.add('current_weather_icon')
-    // weatherIcon.innerHTML = icon;
-    // display.appendChild(weatherIcon);
-  }
-
 
   export function currentTime() {
     const timeDisplay = document.querySelector('.main_display__place_time')
