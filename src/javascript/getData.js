@@ -38,18 +38,4 @@ export  async function getWeatherForCity(coordinates, key) {
   }
   
 
-  //this gets all thedata with one API call
-  export  async function getWeatherData(city, key) {
-    try {
-      const responseData = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}`)
-      const dataJson = await responseData.json()
-      const data = await dataJson
-      return data
-    } catch (err) {
-      console.log("coordinates fetch error")
-      console.log(err)
-    }
-    
-}
-
 

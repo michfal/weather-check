@@ -2,8 +2,8 @@ import '../sass/style.scss';
 
 import "regenerator-runtime/runtime.js";
 import {getWeather} from './getData';
-import {getCoordinates} from './getData';
-import {getWeatherForCity} from './getData';
+// import {getCoordinates} from './getData';
+// import {getWeatherForCity} from './getData';
 import {displayCurrentWeather} from './displayData';
 import {displayDailyWeather} from './displayData';
 import {currentTime} from './displayData'
