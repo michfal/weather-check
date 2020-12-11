@@ -24,6 +24,16 @@ export  async function displayCurrentWeather(weatherData, weatherIcons) {
     
     display.appendChild(currentWeatherDiv);
    
+    addDataDisplay(data.humidity, data.wind, data.pressure)
+}
+
+function addDataDisplay(humidity, wind, pressure) {
+  const humidityBlock = document.querySelector('.j-add_info_humidity');
+  const windBlock = document.querySelector('.j-add_info_wind');
+  const pressureBlock = document.querySelector('.j-add_info_pressure');
+  humidityBlock.innerHTML = humidity;
+  windBlock.innerHTML = wind;
+  pressureBlock.innerHTML = pressure;
 }
 
 function filterData(currentWeather, weatherIcons) {
@@ -35,6 +45,7 @@ function filterData(currentWeather, weatherIcons) {
             sunrise: timeConvert(currentWeather.sunrise),
             humidity: currentWeather.humidity,
             pressure: currentWeather.pressure,
+            wind: currentWeather.wind_speed,
             temperature: currentWeather.temp,
             feelsLike: currentWeather.feels_like,
             weather: currentWeather.weather[0],
