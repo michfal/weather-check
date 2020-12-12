@@ -2,7 +2,7 @@
 export  async function displayCurrentWeather(weatherData, weatherIcons) {
     const currentWeather = weatherData.current;
 
-    const data = new filterData(currentWeather, weatherIcons)
+    const data = new FilterData(currentWeather.dt, currentWeather.sunset, currentWeather.sunrise, currentWeather.humidity, currentWeather.pressure, currentWeather.wind_speed, currentWeather.temp, currentWeather.feels_like, currentWeather.weather[0], currentWeather.weather[0].description, currentWeather.weather[0].icon)
 
       const content = `
     <h2 class="info_text info_text--large_scrn">${data.date}</h2>
@@ -36,28 +36,27 @@ function addDataDisplay(humidity, wind, pressure) {
   pressureBlock.innerHTML = pressure;
 }
 
-function filterData(currentWeather, weatherIcons) {
-  // const currentWeather = weatherData.current; 
-    // console.log(currentWeather.weather)
-    const data = {
-            date: dateConvert(currentWeather.dt),
-            sunset: timeConvert(currentWeather.sunset),                        
-            sunrise: timeConvert(currentWeather.sunrise),
-            humidity: currentWeather.humidity,
-            pressure: currentWeather.pressure,
-            wind: currentWeather.wind_speed,
-            temperature: currentWeather.temp,
-            feelsLike: currentWeather.feels_like,
-            weather: currentWeather.weather[0],
-            description: currentWeather.weather[0].description,
-            icon: currentWeather.weather[0].icon,
-          }
-      return data
-    }
+
+function FilterData(date, sunset, sunrise, humidity, pressure, wind, temperature, feelsLike, weather, description, icon) {
+  this.date = dateConvert(date);
+  this.sunset = timeConvert(sunset);                        
+  this.sunrise = timeConvert(sunrise);
+  this.humidity = humidity;
+  this.pressure = pressure;
+  this.wind = wind;
+  this.temperature = temperature;
+  this.feelsLike = feelsLike;
+  this.weather = weather;
+  this.description = description;
+  this.icon = icon;
+}
+
+  
 
 export  async function displayDailyWeather(weatherData) {
     const dailyWeather = weatherData.daily;
-    // console.log(dailyWeather)
+     console.log(dailyWeather[0])
+
 }
 
 function dateConvert(UNIX_timestamp){
