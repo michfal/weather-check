@@ -28,7 +28,7 @@ window.addEventListener('load', async (event) => {
     const weatherData = await getWeather(city, process.env.API_KEY);
     console.log(weatherData)
     await displayCurrentWeather(weatherData, weatherIcons)
-    await displayDailyWeather(weatherData)
+    await displayDailyWeather(weatherData, weatherIcons)
 })
 
 // searchButton.addEventListener('click', async (event) => {

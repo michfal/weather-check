@@ -1,3 +1,7 @@
 //anything reusable: buttons, navbars, cards  
 @import "base";
 
+.displayHidden {
+    overflow: hidden;
+    height: 0px;
+}
