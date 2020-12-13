@@ -12,10 +12,6 @@ html, body {
 }
 
 
-
-
-
-
 .main_display {
     background-image: linear-gradient(to bottom right, #403D3F, #131313);
     height: 50vh;
@@ -45,7 +41,7 @@ html, body {
                 padding: 4px 10px;
                 border-radius: 5px;
                 display: inline;
-                background-color: #131313;
+                background-color: $color-dark-bg;
                 border: 1px solid $color-border;
                 color: $color-gray1;
             }
@@ -100,15 +96,15 @@ html, body {
     height: 30%;
     min-height: 4rem;
     width: 100%;
-    max-width: 300px;
+    max-width: 14rem;
     margin: auto;
     display: flex;
     justify-content: space-around;
     // justify-content: center;
     &__block {
         border-radius: 0.5rem;
-        width: 3.7rem;
-        height: 3.7rem;
+        width: 3.6rem;
+        height: 3.6rem;
         background-image: linear-gradient(to bottom right, #9DEF41, #6BBD10);
         display: flex;
         flex-direction: column;
@@ -128,6 +124,79 @@ html, body {
 
 .seven_days_display {
     background-color: #1C1C1C;
-    height: 50vh;
+    // height: 50vh;
+    display: grid;
+    grid-template-columns: 18% 27% 18% 18% 19%;
+    grid-template-rows: 2rem 2rem auto;
+    // grid-auto-rows: minmax(20px, auto);
+    // grid-template-areas:
+    // "header_main header_main header_main header_main header_main"
+    // "day forecast wind humidity pressure";
+    &__header {
+        grid-column: 1 / 6;
+        grid-row: 1 / 2;
+        text-align: center;
+        align-self: center;
+        font-size: 0.9rem;
+    }
+    &__sub_header {
+        // grid-area: sub_header;
+        font-size: 0.7rem;
+        text-align: center;
+    }
+    &__block{
+        grid-column: 1 / 6;
+        display: grid;
+        grid-template-columns: 18% 27% 18% 18% 19%;
+        // width: 94%;
+        height: 2.7rem;
+    }
+    &__sub_block {
+        background-color: $color-dark-bg;
+        width: 94%;
+        height: 2.7rem;
+        justify-self: center;
+        border: 1px solid $color-border;
+        border-radius: 0.5rem;
+        display: flex;
+        justify-content: center;
+        // align-items: center;
+        flex-direction: column;
+        &_header {
+            font-size: 0.7rem;
+            text-align: center;
+        }
+        &_image {
+            height: 40%;
+            // width: 30%;
+            color: white;
+        }
+        &_temperature {
+            flex-direction: row;
+            padding: 6px;
+            &_values_container {
+                display: flex;
+                width: 2.5rem;
+                // border: 1px solid red;
+                flex-direction: column;
+                justify-content: center;
+            }
+            // &_icon {
+            //     width: 40px;
+
+            // }
+        }
+    }
+
+    // .seven_days_display__block_image {
+    //     height: 30%;
+    //     width: 30%;
+    //     color: white;
+    // }
+    // &__block > h2 {
+    //     font-size: 0.7rem;
+    //     text-align: center;
+    // }
 }
+
 
