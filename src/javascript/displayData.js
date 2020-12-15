@@ -18,11 +18,11 @@ export  async function displayCurrentWeather(weatherData, weatherIcons) {
     const display = document.querySelector('.main_display__weather')
     display.innerHTML = ''
     
-    const currentWeatherDiv = document.createElement('DIV');
-    currentWeatherDiv.classList.add('current_weather')
-    currentWeatherDiv.innerHTML = content;
+    // const currentWeatherDiv = document.createElement('DIV');
+    // currentWeatherDiv.classList.add('current_weather')
+    display.innerHTML = content;
     
-    display.appendChild(currentWeatherDiv);
+    // display.appendChild(currentWeatherDiv);
    
     addDataDisplay(data.humidity, data.wind, data.pressure)
 }
