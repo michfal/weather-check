@@ -170,10 +170,7 @@ html, body {
     display: grid;
     grid-template-columns: 18% 27% 18% 18% 19%;
     grid-template-rows: 2rem 2rem auto;
-    // grid-auto-rows: minmax(20px, auto);
-    // grid-template-areas:
-    // "header_main header_main header_main header_main header_main"
-    // "day forecast wind humidity pressure";
+
     &__header {
         grid-column: 1 / 6;
         grid-row: 1 / 2;
