@@ -62,10 +62,10 @@ export  async function displayDailyWeather(weatherData, weatherIcons) {
     dailyWeather.forEach((e) => {
       const data = new FilterData(e.dt, e.sunset, e.sunrise, e.humidity, e.pressure, e.wind_speed, e.temp, e.feels_like, e.weather[0], e.weather[0].description, e.weather[0].icon);
       const content = `
-      <div class="seven_days_display__sub_block"><h2 class="seven_days_display__sub_block_header">${data.date}</h2></div>
+      <div class="seven_days_display__sub_block seven_days_display__sub_block_date"><h2 class="seven_days_display__sub_block_header">${data.date}</h2></div>
       <div class="seven_days_display__sub_block seven_days_display__sub_block_temperature">${weatherIcons[data.icon]}
         <div class="seven_days_display__sub_block_temperature_values_container">
-          <h2 class="seven_days_display__sub_block_header">${Math.round(data.temperature.day)}&#176C</h2>
+          <h2 class="seven_days_display__sub_block_header seven_days_display__sub_block_header--big">${Math.round(data.temperature.day)}&#176C</h2>
           <h2 class="seven_days_display__sub_block_header">${Math.round(data.feelsLike.day)}&#176C</h2>
         </div>
       </div>

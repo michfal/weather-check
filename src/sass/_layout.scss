@@ -133,43 +133,21 @@ html, body {
     }
 }
 
-// .weather_add_info {
-//     // border: 1px solid green;
-//     height: 30%;
-//     min-height: 4rem;
-//     width: 100%;
-//     max-width: 14rem;
-//     margin: auto;
-//     display: flex;
-//     justify-content: space-around;
-//     // justify-content: center;
-//     &__block {
-//         border-radius: 0.5rem;
-//         width: 3.6rem;
-//         height: 3.6rem;
-//         background-image: linear-gradient(to bottom right, #9DEF41, #6BBD10);
-//         display: flex;
-//         flex-direction: column;
-//         align-items: center;
-//         justify-content: center;
-//         &_img {
-//             height: 60%;
-//             width: 60%;
-//         }
-//         &_display {
-//             color: $color-graphite1;
-//             font-size: $add_info-text-size;
-//             font-weight: 700;
-//         }
-//     }
-// }
+.seven_days_container {
+    background-color: $color-graphite-bg;
+}
 
 .seven_days_display {
-    background-color: #1C1C1C;
+    // background-color: #1C1C1C;
     // height: 50vh;
+    max-width: 50rem;
+    margin: auto;
     display: grid;
-    grid-template-columns: 18% 27% 18% 18% 19%;
+    // grid-template-columns: minmax(18%, 2.7rem) 27% 18% 18% 19%;
+    grid-template-columns: 2.7rem 2fr 1fr 1fr 1fr;
     grid-template-rows: 2rem 2rem auto;
+    grid-column-gap: 0.2rem;
+    grid-row-gap: 0.2rem;
 
     &__header {
         grid-column: 1 / 6;
@@ -186,14 +164,17 @@ html, body {
     &__block{
         grid-column: 1 / 6;
         display: grid;
-        grid-template-columns: 18% 27% 18% 18% 19%;
+        // grid-template-columns: minmax(18%, 2.7rem) 27% 18% 18% 19%;
+        grid-template-columns: 2.7rem 2fr 1fr 1fr 1fr;
+        grid-column-gap: 0.2rem;
         // width: 94%;
         height: 2.7rem;
     }
     &__sub_block {
         // background-color: $color-dark-bg;
-        width: 94%;
+        width: 100%;
         height: 2.7rem;
+        min-width: 2.7rem;
         justify-self: center;
         border: 1px solid $color-border;
         border-radius: 0.5rem;
@@ -201,9 +182,16 @@ html, body {
         justify-content: center;
         // align-items: center;
         flex-direction: column;
+        // &_date {
+        //     // max-width: 2.7rem;
+        //     // justify-self: right;
+        // }
         &_header {
             font-size: 0.7rem;
             text-align: center;
+            &--big {
+                font-size: 1rem;
+            }
         }
         &_image {
             height: 40%;
