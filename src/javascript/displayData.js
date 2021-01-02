@@ -11,9 +11,11 @@ export  async function displayCurrentWeather(weatherData, weatherIcons) {
       ${weatherIcons[data.icon]}
       <h2 class="info_text info_text--temperature_main">${Math.round(data.temperature)}&#176C</h2>
     </div>
-    <h2 class="info_text">${data.description}</h2>
-    <h2 class="info_text">Feels like ${Math.round(data.feelsLike)}&#176C</h2>
-    `
+    <div class="main_display__weather_description">
+      <h2 class="info_text">${data.description}</h2>
+      <h2 class="info_text">Feels like ${Math.round(data.feelsLike)}&#176C</h2>
+    </div>
+      `
     
     const display = document.querySelector('.main_display__weather')
     display.innerHTML = ''
@@ -55,7 +57,7 @@ function FilterData(date, sunset, sunrise, humidity, pressure, wind, temperature
 
 export  async function displayDailyWeather(weatherData, weatherIcons) {
     const dailyWeather = weatherData.daily;
-     console.log(dailyWeather[0])
+    //  console.log(dailyWeather[0])
 
      const display = document.querySelector('.j-seven_days_display')
       // display.innerHTML = ''
@@ -78,7 +80,7 @@ export  async function displayDailyWeather(weatherData, weatherIcons) {
       weatherDiv.classList.add('seven_days_display__block')
       weatherDiv.innerHTML = content;
       const icon = document.querySelector('svg');
-      console.log(icon)
+      // console.log(icon)
       icon.classList.add('seven_days_display__sub_block_temperature_icon')
  
       display.appendChild(weatherDiv);
