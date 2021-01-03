@@ -18,8 +18,11 @@ html, body {
     min-height: 14rem;
     border-bottom: 1px solid $color-border;
     display: grid;
-    grid-template-columns: auto;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: 1.8rem 1.8rem auto auto;
+    // @media (min-width: 600px) {
+    //     grid-template-columns: auto auto;
+    // }
     &__header {
         // height: 1.8rem;
         border-bottom: 1px solid $color-border;
@@ -28,6 +31,8 @@ html, body {
         justify-content: center;
         grid-row-start: 1;
         grid-row-end: 2;
+        grid-column-start: 1;
+        grid-column-end: 3;
     }
     &__place {
         // height: 1.8rem;
@@ -35,6 +40,8 @@ html, body {
         justify-content: space-between;
         grid-row-start: 2;
         grid-row-end: 3;
+        grid-column-start: 1;
+        grid-column-end: 3;
         &_time {
             margin: auto;
             vertical-align: middle;
@@ -62,28 +69,55 @@ html, body {
     &__weather {
         // border: 1px solid red;
         // height: 50%;
+        // width: 50vw;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: space-around;        
         grid-row-start: 3;
         grid-row-end: 4;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        @media (min-width: 600px) {
+            grid-column-end: 2;
+        }
         &_icon {
             height: 100%;
+        }
+        &_description {
+            margin: 0rem auto 2rem auto;
+            display: flex;
+            flex-direction: column;;
+            justify-content: space-around;
+            // border: 1px solid red;
+            width: 60%;
+            max-width: 10rem;
+            height: 3rem;
+            @media (min-width: 600px) {
+                flex-direction: row;
+            }
         }
     }
     &__add_info {
         // border: 1px solid green;
         // height: 30%;
         min-height: 4.5rem;
-        width: 90vw;
+        width: 90%;
         padding-top: 0.3rem;
         max-width: 14rem;
         margin: auto;
         grid-row-start: 4;
         grid-row-end: 5;
+        grid-column-start: 1;
+        grid-column-end: 3;
         display: flex;
         justify-content: space-around;
+        @media (min-width: 600px) {
+            grid-row-start: 3;
+            grid-row-end: 4;
+            grid-column-start: 2;
+            // grid-column-end: 3;
+        }
         // justify-content: center;
         &_block {
             border-radius: 0.5rem;
@@ -104,13 +138,14 @@ html, body {
                 font-weight: 700;
             }
         }
+
     }
 }
 
 
 .weather_basic_info {
     // border: 1px solid red;
-    width: 90vw;
+    // width: 90vw;
     min-width: 10rem;
     height: 40%;
     display: flex;
@@ -123,6 +158,7 @@ html, body {
     font-size: $info-text-size;
     font-weight: 400;
     text-align: center;
+    margin: auto;
     &--large_scrn {
         display: none;
     }
