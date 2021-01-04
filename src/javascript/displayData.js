@@ -91,10 +91,10 @@ export  async function displayDailyWeather(weatherData, weatherIcons) {
 function dateConvert(UNIX_timestamp){
     const timestamp = new Date(UNIX_timestamp * 1000);
     const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-    const year = timestamp.getFullYear();
+    // const year = timestamp.getFullYear();
     const month = months[timestamp.getMonth()];
     const date = timestamp.getDate();
-    const time = date + ' ' + month + ' ' + year; 
+    const time = date + ' ' + month; 
     return time;
   }
 
