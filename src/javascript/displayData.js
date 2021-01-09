@@ -26,7 +26,8 @@ export  async function displayCurrentWeather(weatherData, weatherIcons) {
     
     // display.appendChild(currentWeatherDiv);
    
-    addDataDisplay(data.humidity, data.wind, data.pressure)
+    addDataDisplay(data.humidity, data.wind, data.pressure);
+    displayDateInfo(data.date, data.sunset, data.sunrise)
 }
 
 function addDataDisplay(humidity, wind, pressure) {
@@ -36,6 +37,21 @@ function addDataDisplay(humidity, wind, pressure) {
   humidityBlock.innerHTML = humidity;
   windBlock.innerHTML = wind;
   pressureBlock.innerHTML = pressure;
+}
+
+function displayDateInfo(day, sunrise, sunset) {
+  console.log(day);
+  console.log(sunrise);
+  console.log(sunset);
+  const dayNode = document.querySelector('.j-day')
+  const sunriseNode = document.querySelector('.j-sunrise')
+  const sunsetNode = document.querySelector('.j-sunset')
+  console.log(dayNode)
+  console.log(sunriseNode)
+  console.log(sunsetNode)
+  dayNode.innerHTML = day
+  sunriseNode.innerHTML = `Sunrise ${sunrise}`
+  sunsetNode.innerHTML = `Sunset ${sunset}`
 }
 
 
