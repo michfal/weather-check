@@ -87,10 +87,12 @@ export  async function displayDailyWeather(weatherData, weatherIcons) {
           <h2 class="seven_days_display__sub_block_header">${Math.round(data.feelsLike.day)}&#176C</h2>
         </div>
       </div>
-      <div class="seven_days_display__sub_block"><img class="seven_days_display__sub_block_image" src="../images/wind_icon_white.svg" alt=""><h2 class="seven_days_display__sub_block_header">${Math.round(data.wind)} km/h</h2></div>
-      <div class="seven_days_display__sub_block"><img class="seven_days_display__sub_block_image" src="../images/humidity_icon_white.svg" alt=""><h2 class="seven_days_display__sub_block_header">${data.humidity}%</h2></div>
-      <div class="seven_days_display__sub_block"><img class="seven_days_display__sub_block_image" src="../images/pressure_icon_white.svg" alt=""><h2 class="seven_days_display__sub_block_header">${data.pressure} hPa</h2></div>
+    
+      <div class="seven_days_display__sub_block">${weatherIcons.wind}<h2 class="seven_days_display__sub_block_header">${Math.round(data.wind)} km/h</h2></div>
+      <div class="seven_days_display__sub_block">${weatherIcons.humidity}<h2 class="seven_days_display__sub_block_header">${data.humidity}%</h2></div>
+      <div class="seven_days_display__sub_block">${weatherIcons.pressure}<h2 class="seven_days_display__sub_block_header">${data.pressure} hPa</h2></div>
       `;
+
  
       const weatherDiv = document.createElement('DIV');
       weatherDiv.classList.add('seven_days_display__block')
