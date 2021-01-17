@@ -20,23 +20,24 @@ export  async function displayCurrentWeather(weatherData, weatherIcons) {
     const display = document.querySelector('.main_display__weather')
     display.innerHTML = ''
     
-    // const currentWeatherDiv = document.createElement('DIV');
-    // currentWeatherDiv.classList.add('current_weather')
+
     display.innerHTML = content;
     
-    // display.appendChild(currentWeatherDiv);
    
     addDataDisplay(data.humidity, data.wind, data.pressure);
     displayDateInfo(data.date, data.sunset, data.sunrise)
 }
 
 function addDataDisplay(humidity, wind, pressure) {
+  const addInfo = document.querySelector('.j-add_info');
   const humidityBlock = document.querySelector('.j-add_info_humidity');
   const windBlock = document.querySelector('.j-add_info_wind');
   const pressureBlock = document.querySelector('.j-add_info_pressure');
   humidityBlock.innerHTML = humidity;
   windBlock.innerHTML = wind;
   pressureBlock.innerHTML = pressure;
+
+  addInfo.classList.remove('hidden')
 }
 
 function displayDateInfo(day, sunrise, sunset) {
@@ -73,10 +74,8 @@ function FilterData(date, sunset, sunrise, humidity, pressure, wind, temperature
 
 export  async function displayDailyWeather(weatherData, weatherIcons) {
     const dailyWeather = weatherData.daily;
-    //  console.log(dailyWeather[0])
 
      const display = document.querySelector('.j-seven_days_display')
-      // display.innerHTML = ''
     dailyWeather.forEach((e) => {
       const data = new FilterData(e.dt, e.sunset, e.sunrise, e.humidity, e.pressure, e.wind_speed, e.temp, e.feels_like, e.weather[0], e.weather[0].description, e.weather[0].icon);
       const content = `
@@ -98,10 +97,10 @@ export  async function displayDailyWeather(weatherData, weatherIcons) {
       weatherDiv.classList.add('seven_days_display__block')
       weatherDiv.innerHTML = content;
       const icon = document.querySelector('svg');
-      // console.log(icon)
       icon.classList.add('seven_days_display__sub_block_temperature_icon')
  
       display.appendChild(weatherDiv);
+      display.classList.remove('hidden')
     })
 
 }
@@ -109,7 +108,7 @@ export  async function displayDailyWeather(weatherData, weatherIcons) {
 function dateConvert(UNIX_timestamp){
     const timestamp = new Date(UNIX_timestamp * 1000);
     const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-    // const year = timestamp.getFullYear();
+
     const month = months[timestamp.getMonth()];
     const date = timestamp.getDate();
     const time = date + ' ' + month; 
