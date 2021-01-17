@@ -9,7 +9,7 @@ import {getSearchFormData} from './searchForm';
 import {weatherIcons} from './weatherIcons'
 
 
-const searchButton = document.querySelector('#search_button');
+const searchButton = document.querySelector('.j-search_button');
 
 
 searchButton.addEventListener('click', async (event) => {
