@@ -64,23 +64,6 @@ html, body {
         }
         &_form {
             margin: auto auto auto 0;
-            
-            // &_button {
-            //     padding: 4px 10px;
-            //     border-radius: 5px;
-            //     display: inline;
-            //     background-color: $color-dark-bg;
-            //     border: 1px solid $color-border;
-            //     color: $color-gray1;
-            // }
-            &_input {
-                border: 1px solid $color-border;
-                background-color: $color-dark-bg;
-                color: $color-gray1;
-                width: 50%;
-                padding: 4px 5px;
-                
-            }
         }
     }
     &__date_info {

@@ -8,12 +8,20 @@ import {currentTime} from './displayData'
 import {getSearchFormData} from './searchForm';
 import {weatherIcons} from './weatherIcons'
 
-
+const welcomeScreen = document.querySelector('.welcome_screen');
 const searchButton = document.querySelector('.j-search_button');
 
+window.addEventListener('load', () => {
+    const formData = getSearchFormData();
+    console.log(formData)
+    console.log(formData === "")
+    if (formData === "") {
+        welcomeScreen.classList.add('hidden')
+    }
+})
 
 searchButton.addEventListener('click', async (event) => {
-    const welcomeScreen = document.querySelector('.welcome_screen');
+    
     
     event.preventDefault()
     const formData = getSearchFormData();

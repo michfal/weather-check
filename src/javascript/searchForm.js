@@ -14,7 +14,7 @@ export function getSearchFormData() {
     //     country: searchForm[0].value,
     //     city: searchForm[1].value
     // }
-    // console.log(formData)
+    // console.log(formData === "")
     return formData
 }
 

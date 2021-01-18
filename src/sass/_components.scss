@@ -20,3 +20,11 @@
     border: 1px solid $color-border;
     color: $color-gray1;
 }
+
+.form_input {
+    border: 1px solid $color-border;
+    background-color: $color-dark-bg;
+    color: $color-gray1;
+    width: 50%;
+    padding: 4px 5px;
+}
