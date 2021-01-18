@@ -13,6 +13,7 @@ const searchButton = document.querySelector('.j-search_button');
 
 
 searchButton.addEventListener('click', async (event) => {
+    const welcomeScreen = document.querySelector('.welcome_screen');
     
     event.preventDefault()
     const formData = getSearchFormData();
@@ -21,6 +22,7 @@ searchButton.addEventListener('click', async (event) => {
     const weatherData = await getWeather(city, process.env.API_KEY);
     await displayCurrentWeather(weatherData, weatherIcons)
     await displayDailyWeather(weatherData, weatherIcons)
+    welcomeScreen.classList.add('hidden')
 })
 
 

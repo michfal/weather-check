@@ -1,6 +1,6 @@
 export function getSearchFormData() {
     
-    const searchForm = document.querySelectorAll('#search_form input');
+    const searchForm = document.querySelectorAll('.j-search_form input');
      const formData = searchForm[0].value
     // const city = searchForm[1].value
     // console.log(country)

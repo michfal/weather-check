@@ -9,4 +9,14 @@
 .hidden {
     // display: none;
     opacity: 0;
+    pointer-events: none;
+}
+
+.form_button {
+    padding: 4px 10px;
+    border-radius: 5px;
+    display: inline;
+    background-color: $color-dark-bg;
+    border: 1px solid $color-border;
+    color: $color-gray1;
 }

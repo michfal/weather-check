@@ -10,8 +10,26 @@ html, body {
 .logo {
     font-size: $info-text-size;
     font-weight: 700;
+    &--welcome_screen {
+        font-size: 1.5rem;
+        margin: 0.5rem
+    }
 }
 
+
+.welcome_screen {
+    z-index: 1;
+    background-image: linear-gradient(to bottom right, #403D3F, #131313);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    // transition-delay: 1s;
+    transition: opacity 1s;
+}
 
 .main_display {
     background-image: linear-gradient(to bottom right, #403D3F, #131313);
@@ -47,14 +65,14 @@ html, body {
         &_form {
             margin: auto auto auto 0;
             
-            &_button {
-                padding: 4px 10px;
-                border-radius: 5px;
-                display: inline;
-                background-color: $color-dark-bg;
-                border: 1px solid $color-border;
-                color: $color-gray1;
-            }
+            // &_button {
+            //     padding: 4px 10px;
+            //     border-radius: 5px;
+            //     display: inline;
+            //     background-color: $color-dark-bg;
+            //     border: 1px solid $color-border;
+            //     color: $color-gray1;
+            // }
             &_input {
                 border: 1px solid $color-border;
                 background-color: $color-dark-bg;
