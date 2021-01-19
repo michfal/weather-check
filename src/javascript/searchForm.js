@@ -1,20 +1,15 @@
 export function getSearchFormData() {
     
-    const searchForm = document.querySelectorAll('#search_form input');
-     const formData = searchForm[0].value
-    // const city = searchForm[1].value
-    // console.log(country)
-    // console.log(city)
-    // const formData = {
-    //     country: searchForm[0].value,
-    //     city: searchForm[1].value
-    // }
+    const searchForm = document.querySelectorAll('.j-main_search_form_input');
+    const formData = searchForm[0].value
+    console.log(formData)
+    return formData
+}
+export function getSearchFormDataWelcome() {
     
-    // const formData = {
-    //     country: searchForm[0].value,
-    //     city: searchForm[1].value
-    // }
-    // console.log(formData)
+    const searchForm = document.querySelectorAll('.j-search_form input');
+    const formData = searchForm[0].value
+    console.log(formData)
     return formData
 }
 

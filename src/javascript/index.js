@@ -6,21 +6,35 @@ import {displayCurrentWeather} from './displayData';
 import {displayDailyWeather} from './displayData';
 import {currentTime} from './displayData'
 import {getSearchFormData} from './searchForm';
+import {getSearchFormDataWelcome} from './searchForm';
 import {weatherIcons} from './weatherIcons'
 
-
+const welcomeScreen = document.querySelector('.welcome_screen');
 const searchButton = document.querySelector('.j-search_button');
+const searchButtonWelcome = document.querySelector('.j-search_button_welcome');
 
 
 searchButton.addEventListener('click', async (event) => {
-    
     event.preventDefault()
     const formData = getSearchFormData();
     const city = formData
-    
+    console.log("search")
+    // console.log(formData !== "")
     const weatherData = await getWeather(city, process.env.API_KEY);
     await displayCurrentWeather(weatherData, weatherIcons)
     await displayDailyWeather(weatherData, weatherIcons)
+    // welcomeScreen.classList.add('hidden')
+})
+searchButtonWelcome.addEventListener('click', async (event) => {
+    event.preventDefault()
+    const formData = getSearchFormDataWelcome();
+    const city = formData
+    console.log("main")
+    // console.log(formData !== "")
+    const weatherData = await getWeather(city, process.env.API_KEY);
+    await displayCurrentWeather(weatherData, weatherIcons)
+    await displayDailyWeather(weatherData, weatherIcons)
+    welcomeScreen.classList.add('hidden')
 })
 
 

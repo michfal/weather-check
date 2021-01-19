@@ -41,7 +41,6 @@ function addDataDisplay(humidity, wind, pressure) {
 }
 
 function displayDateInfo(day, sunrise, sunset) {
-
   const dayNode = document.querySelector('.j-day')
   const sunriseNode = document.querySelector('.j-sunrise')
   const sunsetNode = document.querySelector('.j-sunset')
