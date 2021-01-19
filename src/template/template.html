@@ -12,52 +12,59 @@
     </head>
     <body>
         
-                <section class="main_display">
-                    <header class="main_display__header">
-                        
-                        <h1 class="logo">Weather-Check</h1>    
-                    </header>
-                    <div class="main_display__place">
-                        <form class="main_display__place_form" action="" id="search_form">
-                            <button class="main_display__place_form_button" id="search_button">Search</button>
-                            <input class="main_display__place_form_input" type="text" name="city">
-                            
-                        </form>
-                        <p class="main_display__place_time">time</p>
-                    </div>
-                    
-                    <div class="main_display__date_info">
-                        <h2 class="info_text info_text--align_right j-day"></h2><h2 class="info_text info_text--align_right j-sunrise"></h2><h2 class="info_text info_text--align_right j-sunset"></h2>
-                    </div>
+        <div class="welcome_screen">
+            <h1 class="logo logo--welcome_screen">Weather-Check</h1>
+            <h2>Please type in city name</h2>
+            <form class=" j-search_form" action="">
+                <button class="form_button j-search_button_welcome" >Search</button>
+                <input class="form_input" type="text" name="city">    
+            </form>
+        </div>
+        
+        <section class="main_display">
+            <header class="main_display__header">
+                
+                <h1 class="logo">Weather-Check</h1>    
+            </header>
+            <div class="main_display__place">
+                <form class="main_display__place_form j-search_form" action="" >
+                    <button class="form_button j-search_button" >Search</button>
+                    <input class="form_input j-main_search_form_input" type="text" name="city">    
+                </form>
+                <p class="main_display__place_time">time</p>
+            </div>
+            
+            <div class="main_display__date_info">
+                <h2 class="info_text info_text--align_right j-day"></h2><h2 class="info_text info_text--align_right j-sunrise"></h2><h2 class="info_text info_text--align_right j-sunset"></h2>
+            </div>
+            <div class="main_display__weather">
 
-                    <div class="main_display__weather">
-
-                    </div>
+            </div>
                     
-                    <div class="main_display__add_info j-add_info hidden" >
-                        <div class="main_display__add_info_block">
-                            <img class="main_display__add_info_block_img" src="../images/humidity_icon.svg" alt="">
-                            <h2 class="main_display__add_info_block_display"><span class="j-add_info_humidity"></span>%</h2>
-                        </div>
-                        <div class="main_display__add_info_block">
-                            <img class="main_display__add_info_block_img" src="../images/wind_icon.svg" alt="">
-                            <h2 class="main_display__add_info_block_display"><span class="j-add_info_wind"></span> km/h</h2>
-                        </div>
-                        <div class="main_display__add_info_block">
-                            <img class="main_display__add_info_block_img" src="../images/pressure_icon.svg" alt="">
-                            <h2 class="main_display__add_info_block_display"><span class="j-add_info_pressure"></span> hPa</h2>
-                        </div>
-                    </div>
-                </section>
-            <section class="seven_days_container ">
-                <div class="seven_days_display j-seven_days_display hidden">
-                    <h2 class="seven_days_display__header">Next 7 days</h2>
-                    <h3 class="seven_days_display__sub_header">Day</h3>
-                    <h3 class="seven_days_display__sub_header">Forecast</h3>
-                    <h3 class="seven_days_display__sub_header">Wind</h3>
-                    <h3 class="seven_days_display__sub_header">Humidity</h3>
-                    <h3 class="seven_days_display__sub_header">Pressure</h3>
+            <div class="main_display__add_info j-add_info hidden" >
+                <div class="main_display__add_info_block">
+                    <img class="main_display__add_info_block_img" src="../images/humidity_icon.svg" alt="">
+                    <h2 class="main_display__add_info_block_display"><span class="j-add_info_humidity"></span>%</h2>
                 </div>
-            </section>
+                <div class="main_display__add_info_block">
+                    <img class="main_display__add_info_block_img" src="../images/wind_icon.svg" alt="">
+                    <h2 class="main_display__add_info_block_display"><span class="j-add_info_wind"></span> km/h</h2>
+                </div>
+                <div class="main_display__add_info_block">
+                    <img class="main_display__add_info_block_img" src="../images/pressure_icon.svg" alt="">
+                    <h2 class="main_display__add_info_block_display"><span class="j-add_info_pressure"></span> hPa</h2>
+                </div>
+            </div>
+        </section>
+        <section class="seven_days_container ">
+            <div class="seven_days_display j-seven_days_display hidden">
+                <h2 class="seven_days_display__header">Next 7 days</h2>
+                <h3 class="seven_days_display__sub_header">Day</h3>
+                <h3 class="seven_days_display__sub_header">Forecast</h3>
+                <h3 class="seven_days_display__sub_header">Wind</h3>
+                <h3 class="seven_days_display__sub_header">Humidity</h3>
+                <h3 class="seven_days_display__sub_header">Pressure</h3>
+            </div>
+        </section>
     </body>
 </html>
