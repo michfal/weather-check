@@ -69,8 +69,9 @@ function FilterData(date, sunset, sunrise, humidity, pressure, wind, temperature
 export  async function displayDailyWeather(weatherData, weatherIcons) {
     const dailyWeather = weatherData.daily;
 
-     const display = document.querySelector('.j-seven_days_display')
-    dailyWeather.forEach((e) => {
+     const display = document.querySelector('.j-seven_days_display');
+     display.innerHTML = '';
+      dailyWeather.forEach((e) => {
       const data = new FilterData(e.dt, e.sunset, e.sunrise, e.humidity, e.pressure, e.wind_speed, e.temp, e.feels_like, e.weather[0], e.weather[0].description, e.weather[0].icon);
       const content = `
       <div class="seven_days_display__sub_block seven_days_display__sub_block_date"><h2 class="seven_days_display__sub_block_header">${data.date}</h2></div>
