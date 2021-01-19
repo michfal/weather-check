@@ -184,7 +184,6 @@ html, body {
 }
 
 .seven_days_display {
-
     max-width: 50rem;
     margin: auto;
     display: grid;
@@ -192,7 +191,9 @@ html, body {
     grid-template-rows: 2rem 2rem auto;
     grid-column-gap: 0.2rem;
     grid-row-gap: 0.2rem;
-
+    &_blocks {
+        grid-template-rows: auto;
+    }
     &__header {
         grid-column: 1 / 6;
         grid-row: 1 / 2;
